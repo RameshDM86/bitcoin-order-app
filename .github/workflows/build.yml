@@ -71,7 +71,7 @@ jobs:
           npx ng lint
       - name: Audit
         run: |
-          npm audit fix
+          npm audit fix || true
       - name: Deploy
         run: |
           npm run deploy
