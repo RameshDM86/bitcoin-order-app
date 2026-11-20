@@ -66,6 +66,12 @@ jobs:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
+      - name: lint
+        run: |
+          npx ng lint
+      - name: Audit
+        run: |
+          npm audit fix
       - name: Deploy
         run: |
           npm run deploy
